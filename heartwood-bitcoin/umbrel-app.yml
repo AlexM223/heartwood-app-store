@@ -1,0 +1,53 @@
+manifestVersion: 1
+id: heartwood-bitcoin
+category: bitcoin
+name: Heartwood
+version: "0.2.9"
+tagline: Your self-hosted Bitcoin command center
+description: >-
+  Heartwood is a self-hosted Bitcoin command center: a block explorer,
+  watch-only wallets, PSBT construction, hardware-wallet signing, multisig,
+  and multi-user access with passkeys — all running against your own node.
+
+
+  First run: open the app and sign in with the username and password shown
+  on this page (Umbrel fills them in for you). You'll immediately be asked to
+  set your own email and password — the initial credentials are single-use and
+  cannot be reused.
+
+
+  Hardware-wallet signing (WebHID/WebSerial) requires a browser secure context,
+  so it is served over HTTPS at https://<your-umbrel-host>:5588. Your browser
+  will warn about the self-signed certificate that Heartwood generates on first
+  boot — accept it to continue. Everything else works over the normal app URL.
+
+
+  Chain backend: Heartwood connects to your own Electrum server or Bitcoin Core
+  RPC. Configure this under Settings → Chain Backend after logging in; no
+  external services are contacted.
+releaseNotes: >-
+  Chain data (fee estimates, recent blocks, difficulty/hashrate, address
+  lookups) is served from your own Electrum server or Bitcoin Core RPC instead
+  of a public indexer, so it works on fully self-hosted setups with no outbound
+  internet. Configure your backend under Settings → Chain Backend. Full notes:
+  https://github.com/AlexM223/cairn/releases/tag/v0.2.9
+developer: Alex Martinez
+website: https://github.com/AlexM223/cairn
+dependencies: []
+repo: https://github.com/AlexM223/cairn
+support: https://github.com/AlexM223/cairn/issues
+port: 3217
+gallery:
+  - https://raw.githubusercontent.com/AlexM223/cairn/main/docs/screenshots/dashboard.png
+  - https://raw.githubusercontent.com/AlexM223/cairn/main/docs/screenshots/wallets.png
+  - https://raw.githubusercontent.com/AlexM223/cairn/main/docs/screenshots/multisig-wallet.png
+  - https://raw.githubusercontent.com/AlexM223/cairn/main/docs/screenshots/send-review.png
+path: ""
+icon: https://raw.githubusercontent.com/AlexM223/cairn/main/src/lib/assets/favicon.svg
+defaultUsername: "admin@cairn.local"
+deterministicPassword: true
+backupIgnore:
+  - data/logs
+  - data/tls
+submitter: Alex Martinez
+submission: https://github.com/AlexM223/heartwood-app-store
