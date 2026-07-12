@@ -2,7 +2,7 @@ manifestVersion: 1
 id: heartwood-bitcoin
 category: bitcoin
 name: Heartwood
-version: "0.2.9"
+version: "0.2.10"
 tagline: Your self-hosted Bitcoin command center
 description: >-
   Heartwood is a self-hosted Bitcoin command center: a block explorer,
@@ -26,11 +26,10 @@ description: >-
   RPC. Configure this under Settings → Chain Backend after logging in; no
   external services are contacted.
 releaseNotes: >-
-  Chain data (fee estimates, recent blocks, difficulty/hashrate, address
-  lookups) is served from your own Electrum server or Bitcoin Core RPC instead
-  of a public indexer, so it works on fully self-hosted setups with no outbound
-  internet. Configure your backend under Settings → Chain Backend. Full notes:
-  https://github.com/AlexM223/cairn/releases/tag/v0.2.9
+  Packaging fix: saving the first-run credential reset (and other form
+  submissions) no longer fails silently behind Umbrel's app proxy. The app
+  now reads the proxy's forwarded protocol/host headers. Same app build as
+  0.2.9 — no other changes.
 developer: Alex Martinez
 website: https://github.com/AlexM223/cairn
 dependencies: []
