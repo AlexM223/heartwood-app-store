@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+	<!--
+		Heartwood store icon — solid-background variant of favicon.svg (the
+		"min" detail mark, tone="copper") for the Umbrel App Store tile. The
+		original favicon has no background rect at all (fill="none" rings +
+		a small fill circle), so the store tile showed the mark floating over
+		a see-through/translucent hole instead of a solid tile.
+
+		Background: #100d0b, which is the "bg" token from src/app.css
+		(Cairn/Heartwood's primary standing page surface, "deep wood
+		charcoal") — the truest brand surface for the mark to sit on. Mark:
+		unchanged ring math from HeartwoodMark.svelte (detail="min",
+		tone="copper"), stroke #E8935A (the "accent" copper token) and pith
+		fill #FFE9CE (the "accent-core" cream token) — both exact matches to
+		the app's live theme tokens.
+
+		The mark is scaled 0.814x and re-centered on the canvas so it covers
+		~70% of the tile (down from ~86% edge-to-edge in the raw favicon),
+		giving the icon normal Umbrel-native padding around the mark.
+	-->
+	<rect x="0" y="0" width="100" height="100" rx="20" ry="20" fill="#100d0b"/>
+	<g transform="translate(50 50) scale(0.814) translate(-50 -50)">
+		<ellipse cx="50.911" cy="51.689" rx="43" ry="41.065" fill="none" stroke="#E8935A" stroke-width="3.2" opacity="0.95"/>
+		<ellipse cx="50.244" cy="49.356" rx="28" ry="26.74" fill="none" stroke="#E8935A" stroke-width="2.6" opacity="0.82"/>
+		<ellipse cx="49.667" cy="47.333" rx="15" ry="14.325" fill="none" stroke="#E8935A" stroke-width="2.4" opacity="0.82"/>
+		<circle cx="49.3" cy="46" r="5.5" fill="#FFE9CE"/>
+	</g>
+</svg>

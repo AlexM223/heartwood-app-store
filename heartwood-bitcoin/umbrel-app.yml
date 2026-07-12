@@ -48,7 +48,7 @@ gallery:
   - https://raw.githubusercontent.com/AlexM223/cairn/main/docs/screenshots/multisig-wallet.png
   - https://raw.githubusercontent.com/AlexM223/cairn/main/docs/screenshots/send-review.png
 path: ""
-icon: https://raw.githubusercontent.com/AlexM223/cairn/main/src/lib/assets/favicon.svg
+icon: https://raw.githubusercontent.com/AlexM223/heartwood-app-store/main/heartwood-bitcoin/icon.svg
 defaultUsername: "admin@cairn.local"
 deterministicPassword: true
 backupIgnore:
