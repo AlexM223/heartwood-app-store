@@ -2,7 +2,7 @@ manifestVersion: 1
 id: heartwood-bitcoin
 category: bitcoin
 name: Heartwood
-version: "0.2.18"
+version: "0.2.19"
 tagline: Your self-hosted Bitcoin command center
 description: >-
   Heartwood is a self-hosted Bitcoin command center: a block explorer,
@@ -26,17 +26,18 @@ description: >-
   RPC. Configure this under Settings → Chain Backend after logging in; no
   external services are contacted.
 releaseNotes: >-
-  This release focuses on clearer wallet screens and stronger safety nets.
-  Large-transaction confirmations now let you set the warning threshold in
-  dollars instead of sats, and the send screen's unit toggle cycles cleanly
-  between BTC, sats, and USD. Banners across sign-in, wallet-creation, and
-  the explorer were consolidated into one consistent style instead of
-  several slightly different ones. Under the hood, this release ships
-  security hardening from an internal audit (stricter transaction-signing
-  checks, safer factory-reset and account-deletion handling, a dust-amount
-  pre-flight check on sends) and is backed by 224 new automated tests plus
-  an offline load-testing harness, for 2,734 tests passing overall. Full
-  changelog: https://github.com/AlexM223/cairn/releases/tag/v0.2.18
+  This release focuses on mobile polish and a large QA pass. On phones: the
+  secure-address redirect no longer wipes your wallet-setup progress if it
+  fires mid-wizard, the send review screen now shows dollar amounts alongside
+  sats, several touch targets were sized up to the accessibility guideline,
+  and the wallet detail page's technical/export section is now tucked behind
+  an expandable disclosure to reduce clutter. The block explorer is now
+  upfront about data freshness — if it's showing a cached snapshot because
+  it's disconnected from your node, it says so instead of presenting it as
+  live. Under the hood, this release adds edge-case, destructive-operations,
+  and concurrency/load test coverage, taking the automated test suite to
+  3,085 tests. Full changelog:
+  https://github.com/AlexM223/cairn/releases/tag/v0.2.19
 developer: Alex Martinez
 website: https://github.com/AlexM223/cairn
 dependencies: []
