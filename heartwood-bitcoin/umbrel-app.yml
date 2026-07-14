@@ -2,7 +2,7 @@ manifestVersion: 1
 id: heartwood-bitcoin
 category: bitcoin
 name: Heartwood
-version: "0.2.20"
+version: "0.2.21"
 tagline: Your self-hosted Bitcoin command center
 description: >-
   Heartwood is a self-hosted Bitcoin command center: a block explorer,
@@ -26,16 +26,20 @@ description: >-
   RPC. Configure this under Settings → Chain Backend after logging in; no
   external services are contacted.
 releaseNotes: >-
-  Explorer accuracy: hardened the render guards on block/mempool views so
-  they no longer show NaN or false-zero rows, and added a "Yours" indicator
-  on block-detail transactions you own. Three stability fixes: hardware
-  signing-device options now correctly respect their feature flags
-  (enforced on the server, not just the UI), a subscription leak in the
-  Electrum address watcher that could replay stale data on reconnect is
-  fixed, and wallet refresh no longer double-fetches UTXOs, so it's
-  noticeably faster. Another large test-coverage wave, taking the
-  automated suite to 3,159 tests. Full changelog:
-  https://github.com/AlexM223/cairn/releases/tag/v0.2.20
+  This release adds coinbase-maturity awareness: mining rewards show a clear
+  "maturing" countdown and can't be spent or used for fee-bumping until they
+  unlock. Fee selection now supports sub-1 sat/vB fees end-to-end when your
+  node's relay policy allows it, and transaction details include a new block
+  visualization combining Electrum and Core RPC data. Multisig gets safer
+  key-path checks, owner notifications when a pending cosigner removes
+  themselves, and backups that capture multisig shares and key assignments.
+  The block explorer no longer depends on Esplora — it runs entirely on your
+  own Electrum and Core RPC connections, with clearer per-backend health
+  status. This release also fixes delete-guard races around broadcasts,
+  emoji/multi-byte name-truncation bugs, and formula-injection edge cases in
+  exports, plus faster wallet scanning and steadier Electrum reconnects,
+  backed by another large test-coverage wave. Full changelog:
+  https://github.com/AlexM223/cairn/releases/tag/v0.2.21
 developer: Alex Martinez
 website: https://github.com/AlexM223/cairn
 dependencies: []
