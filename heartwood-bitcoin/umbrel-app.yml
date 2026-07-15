@@ -2,7 +2,7 @@ manifestVersion: 1
 id: heartwood-bitcoin
 category: bitcoin
 name: Heartwood
-version: "0.2.27"
+version: "0.2.28"
 tagline: Your self-hosted Bitcoin command center
 description: >-
   Heartwood is a self-hosted Bitcoin command center: a block explorer,
@@ -26,14 +26,13 @@ description: >-
   RPC. Configure this under Settings → Chain Backend after logging in; no
   external services are contacted.
 releaseNotes: >-
-  This release focuses on send safety and balance insight. Sending now shows
-  live unit conversion and a clear high-spend note, plus an extra recipient
-  verification step on review for your first higher-stake sends. Home and
-  each wallet's detail page gain a multi-horizon growth view (24h/30d/1yr)
-  with a calmer, lazily-updating fiat readout. Also carries forward the block
-  explorer polish from the previous release (popover overlap, pending block
-  order). Full changelog:
-  https://github.com/AlexM223/cairn/releases/tag/v0.2.27
+  This release is about calmer recovery from mistakes. Every send now gets a
+  5-second cancel window before it broadcasts — undo beats warning, so you
+  can catch a wrong address or amount without a scary confirmation dialog in
+  the way. Setting up your recovery phrase is gentler too: it now explains
+  what the phrase is and why it matters before showing it, and verification
+  afterward uses a lighter recognition check instead of a strict retype.
+  Full changelog: https://github.com/AlexM223/cairn/releases/tag/v0.2.28
 developer: Alex Martinez
 website: https://github.com/AlexM223/cairn
 dependencies: []
