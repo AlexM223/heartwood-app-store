@@ -2,7 +2,7 @@ manifestVersion: 1
 id: heartwood-bitcoin
 category: bitcoin
 name: Heartwood
-version: "0.2.25"
+version: "0.2.26"
 tagline: Your self-hosted Bitcoin command center
 description: >-
   Heartwood is a self-hosted Bitcoin command center: a block explorer,
@@ -26,15 +26,11 @@ description: >-
   RPC. Configure this under Settings → Chain Backend after logging in; no
   external services are contacted.
 releaseNotes: >-
-  This release completes a full visual refresh — evergreen ink and
-  slate-blue in place of the old copper theme, with green now reserved
-  strictly for growth/positive balances. Home, navigation, wallet detail,
-  and send screens all get the new look, set in the Fraunces serif for
-  headings. Amounts are shown in sats by default with fiat as a secondary
-  reference (toggle in Settings if you prefer fiat-first). A new app-wide
-  light mode is available alongside the default dark parchment theme via a
-  Settings toggle. Full changelog:
-  https://github.com/AlexM223/cairn/releases/tag/v0.2.25
+  This release fixes two block explorer issues: the trust popover no
+  longer covers transaction details on narrow/mobile screens, and the
+  pending block now shows at the top of the block list where you'd expect
+  it instead of buried below confirmed blocks. Full changelog:
+  https://github.com/AlexM223/cairn/releases/tag/v0.2.26
 developer: Alex Martinez
 website: https://github.com/AlexM223/cairn
 dependencies: []
