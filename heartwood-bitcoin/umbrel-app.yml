@@ -2,7 +2,7 @@ manifestVersion: 1
 id: heartwood-bitcoin
 category: bitcoin
 name: Heartwood
-version: "0.2.29"
+version: "0.2.30"
 tagline: Your self-hosted Bitcoin command center
 description: >-
   Heartwood is a self-hosted Bitcoin command center: a block explorer,
@@ -26,11 +26,10 @@ description: >-
   RPC. Configure this under Settings → Chain Backend after logging in; no
   external services are contacted.
 releaseNotes: >-
-  Your 1-year and all-time growth numbers now stay accurate over time —
-  fixed a case where they could go blank or even show the wrong direction
-  after older transaction history aged out. Plus extra safety tests on the
-  new send flow.
-  Full changelog: https://github.com/AlexM223/cairn/releases/tag/v0.2.29
+  Fees now show in context of your payment — e.g. "less than 1% of this
+  payment" right on the review screen, instead of a bare number. Plus a
+  documentation refresh.
+  Full changelog: https://github.com/AlexM223/cairn/releases/tag/v0.2.30
 developer: Alex Martinez
 website: https://github.com/AlexM223/cairn
 dependencies: []
