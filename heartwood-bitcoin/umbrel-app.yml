@@ -2,7 +2,7 @@ manifestVersion: 1
 id: heartwood-bitcoin
 category: bitcoin
 name: Heartwood
-version: "0.2.22"
+version: "0.2.23"
 tagline: Your self-hosted Bitcoin command center
 description: >-
   Heartwood is a self-hosted Bitcoin command center: a block explorer,
@@ -26,16 +26,15 @@ description: >-
   RPC. Configure this under Settings → Chain Backend after logging in; no
   external services are contacted.
 releaseNotes: >-
-  This release is a polish pass across the app: connection errors now show
-  friendly, plain-language messages instead of raw network errors, the
-  home-screen wallet picker no longer overlaps the balance chart, and
-  activity-feed confirmations use clearer, plain-language wording. Passkeys
-  now work correctly on the secure HTTPS listener, the admin Node Overview
-  shows live, real-time node status instead of stale placeholders, and the
-  dashboard refreshes faster under concurrent use. Recipient addresses now
-  tolerate accidental copy-paste whitespace, and display names have a sane
-  length cap. Full changelog:
-  https://github.com/AlexM223/cairn/releases/tag/v0.2.22
+  This release focuses on honesty and clarity around your funds and your
+  connection. Very large wallets that hit the address-scan limit now get a
+  clear warning instead of silently showing an incomplete balance — coins
+  past the scan window are never hidden without telling you. The fiat
+  privacy toggle now covers the home-screen activity feed too, so amounts
+  stay hidden everywhere you've asked them to be. Connection errors across
+  the block explorer and wallet exports (CSV, receive addresses) now show
+  friendly, plain-language messages instead of raw network details. Full
+  changelog: https://github.com/AlexM223/cairn/releases/tag/v0.2.23
 developer: Alex Martinez
 website: https://github.com/AlexM223/cairn
 dependencies: []
