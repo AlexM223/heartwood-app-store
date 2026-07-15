@@ -2,7 +2,7 @@ manifestVersion: 1
 id: heartwood-bitcoin
 category: bitcoin
 name: Heartwood
-version: "0.2.31"
+version: "0.2.32"
 tagline: Your self-hosted Bitcoin command center
 description: >-
   Heartwood is a self-hosted Bitcoin command center: a block explorer,
@@ -26,11 +26,12 @@ description: >-
   RPC. Configure this under Settings → Chain Backend after logging in; no
   external services are contacted.
 releaseNotes: >-
-  Testnet and regtest signer keys are now accepted when your chain backend
-  is configured for that same network, instead of being rejected as invalid.
-  Shared and multisig wallets are also easier to find and track while
-  setting them up.
-  Full changelog: https://github.com/AlexM223/cairn/releases/tag/v0.2.31
+  Setting up a shared wallet no longer means finishing it in one sitting —
+  progress now saves as you add each cosigner key, so you can pick up right
+  where you left off, even from a different device. Settings also gains a
+  network selector for custom Electrum/Core RPC nodes, so switching between
+  mainnet, testnet, and regtest is a couple of clicks instead of an API call.
+  Full changelog: https://github.com/AlexM223/cairn/releases/tag/v0.2.32
 developer: Alex Martinez
 website: https://github.com/AlexM223/cairn
 dependencies: []
