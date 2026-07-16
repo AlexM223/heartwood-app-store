@@ -2,7 +2,7 @@ manifestVersion: 1
 id: heartwood-bitcoin
 category: bitcoin
 name: Heartwood
-version: "0.2.32"
+version: "0.2.33"
 tagline: Your self-hosted Bitcoin command center
 description: >-
   Heartwood is a self-hosted Bitcoin command center: a block explorer,
@@ -26,12 +26,14 @@ description: >-
   RPC. Configure this under Settings → Chain Backend after logging in; no
   external services are contacted.
 releaseNotes: >-
-  Setting up a shared wallet no longer means finishing it in one sitting —
-  progress now saves as you add each cosigner key, so you can pick up right
-  where you left off, even from a different device. Settings also gains a
-  network selector for custom Electrum/Core RPC nodes, so switching between
-  mainnet, testnet, and regtest is a couple of clicks instead of an API call.
-  Full changelog: https://github.com/AlexM223/cairn/releases/tag/v0.2.32
+  The Settings → Display "Hidden" fiat option is now respected everywhere —
+  amounts across the app, including the send button label, stay BTC/sats-only
+  when you've turned fiat off. Unconfirmed transaction rows are cleaner too:
+  a received transaction no longer shows a confusing fee figure that was
+  never yours to begin with. And the "Speed up" button on a stuck transaction
+  now only appears when it can actually work, instead of offering a control
+  that was guaranteed to fail.
+  Full changelog: https://github.com/AlexM223/cairn/releases/tag/v0.2.33
 developer: Alex Martinez
 website: https://github.com/AlexM223/cairn
 dependencies: []
