@@ -2,7 +2,7 @@ manifestVersion: 1
 id: heartwood-bitcoin
 category: bitcoin
 name: Heartwood
-version: "0.2.35"
+version: "0.2.36"
 tagline: Your self-hosted Bitcoin command center
 description: >-
   Heartwood is a self-hosted Bitcoin command center: a block explorer,
@@ -26,27 +26,21 @@ description: >-
   RPC. Configure this under Settings → Chain Backend after logging in; no
   external services are contacted.
 releaseNotes: >-
-  Desktop layout overhaul: every page now gets a full labeled sidebar and
-  wide-screen layouts instead of a stretched mobile view, across home,
-  send, wallets, explorer, mining, mempool, activity, and settings.
+  Stability fixes for the previous release.
 
 
-  Real-time everywhere: confirmations, balances, transaction lists, the
-  activity feed, explorer blocks, mempool stats, and mining/hashrate
-  figures now update live over a single multiplexed stream — no more
-  manual refreshing. Fixed a bug where a transaction page could show two
-  conflicting confirmation counts.
+  Fixes a startup problem that could stop the app from loading or leave it
+  stuck without live updates when it couldn't reach a Bitcoin backend. The
+  app now always loads, keeps its real-time connection open, and clearly
+  shows a "can't reach the Bitcoin network" banner while a backend is
+  unreachable — reconnecting on its own once it's back.
 
 
-  Also included: solo mining pool support — every Heartwood instance can
-  now run its own multi-user Stratum V1 solo pool, with per-user worker
-  identity, opt-in enable/disable, payout wallet selection, live
-  worker/hashrate view, block-earned tracking with maturity status, solo
-  odds, and an admin-side pool dashboard.
+  The solo mining page is now off by default until you turn it on under
+  Settings, including on installs upgrading from an earlier version.
 
 
-  Full changelog: https://github.com/AlexM223/cairn/releases/tag/v0.2.35
-  and https://github.com/AlexM223/cairn/releases/tag/v0.2.34
+  Full changelog: https://github.com/AlexM223/cairn/releases/tag/v0.2.36
 developer: Alex Martinez
 website: https://github.com/AlexM223/cairn
 dependencies: []
