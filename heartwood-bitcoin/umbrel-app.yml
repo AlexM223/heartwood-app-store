@@ -2,7 +2,7 @@ manifestVersion: 1
 id: heartwood-bitcoin
 category: bitcoin
 name: Heartwood
-version: "0.2.38"
+version: "0.2.39"
 tagline: Your self-hosted Bitcoin command center
 description: >-
   Heartwood is a self-hosted Bitcoin command center: a block explorer,
@@ -26,34 +26,37 @@ description: >-
   RPC. Configure this under Settings → Chain Backend after logging in; no
   external services are contacted.
 releaseNotes: >-
-  Pasting a multisig wallet config (instead of uploading the file) now
-  correctly hands off to the multisig setup flow instead of failing as an
-  invalid key.
+  A wallet you were part-way through setting up, or a payment you started
+  but didn't finish sending, now shows up as a pending draft on the wallet
+  page with a clear "resume" notice instead of quietly disappearing.
+  Address transaction history now degrades gracefully instead of erroring
+  out on Electrum-only setups that don't support full history lookups.
 
 
-  Clearer navigation and settings: the notification bell, your personal
-  notification settings, and the admin notification page now have distinct
-  names instead of all being called "notifications"; the shortcut links on
-  the admin home page jump straight to the right settings section; some
-  technical wording was simplified (for example, "Node" is now "Health").
+  The backup reminder now eases off the longer you've had the app set up
+  instead of nagging at full volume forever, and the first-deposit screen
+  has clearer messaging while you're waiting for funds to arrive and while
+  a deposit is still confirming.
 
 
-  The "can't reach the Bitcoin network" message is now consistent everywhere
-  it appears, with a calmer color for brief, recoverable connection hiccups.
-  Amounts you type now respect your chosen display unit instead of always
-  resetting to sats.
+  Fixed a couple of spots in the Send flow that ignored your fiat-hidden
+  and sats/BTC display preferences, and simplified more technical wording
+  on admin pages. Activity-feed entries now open the right page the same
+  way notifications do.
 
 
-  Fixed transaction search sometimes showing "not found" for a transaction
-  ID when it was actually a temporary lookup error, and fixed notifications
-  not always opening the right page.
+  Also from recent releases: pasting a multisig wallet config (instead of
+  uploading the file) now correctly hands off to the multisig setup flow;
+  clearer navigation labels (the notification bell, personal notification
+  settings, and admin notification page are no longer all just called
+  "notifications"; "Node" is now "Health"); a consistent "can't reach the
+  Bitcoin network" message across the app with a calmer color for brief
+  hiccups; amounts that respect your chosen display unit; a transaction
+  search fix; and a mining-page mobile navigation fix.
 
 
-  Also includes a mobile navigation fix for the mining page and dependency
-  hardening from v0.2.37.
-
-
-  Full changelog: https://github.com/AlexM223/cairn/releases/tag/v0.2.38 and
+  Full changelog: https://github.com/AlexM223/cairn/releases/tag/v0.2.39,
+  https://github.com/AlexM223/cairn/releases/tag/v0.2.38, and
   https://github.com/AlexM223/cairn/releases/tag/v0.2.37
 developer: Alex Martinez
 website: https://github.com/AlexM223/cairn
