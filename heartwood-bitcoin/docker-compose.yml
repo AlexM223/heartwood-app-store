@@ -16,6 +16,15 @@ services:
       # Raw host port for hardware-wallet signing (needs an HTTPS secure context
       # that app_proxy's plain HTTP cannot provide). host 5588 -> container 3443.
       - "5588:3443"
+      # Solo-mining stratum listeners (cairn-kgj7a). The in-app pool binds
+      # 0.0.0.0 inside the container under CAIRN_PLATFORM=umbrel (cairn-bm7c2),
+      # but without these host mappings no LAN miner can ever reach an Umbrel
+      # install — the connection card's stratum+tcp:// address was a dead end.
+      # 3333 = standard/small miners; 3334 = high-difficulty-floor ASIC port
+      # (cairn-pz8v5). Mining is feature-flagged off by default; the listeners
+      # only accept traffic when the pool is enabled in-app.
+      - "3333:3333"
+      - "3334:3334"
     volumes:
       - ${APP_DATA_DIR}/data:/data
     environment:
