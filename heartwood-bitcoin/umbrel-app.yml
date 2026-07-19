@@ -2,7 +2,7 @@ manifestVersion: 1
 id: heartwood-bitcoin
 category: bitcoin
 name: Heartwood
-version: "0.2.36"
+version: "0.2.38"
 tagline: Your self-hosted Bitcoin command center
 description: >-
   Heartwood is a self-hosted Bitcoin command center: a block explorer,
@@ -26,21 +26,35 @@ description: >-
   RPC. Configure this under Settings → Chain Backend after logging in; no
   external services are contacted.
 releaseNotes: >-
-  Stability fixes for the previous release.
+  Pasting a multisig wallet config (instead of uploading the file) now
+  correctly hands off to the multisig setup flow instead of failing as an
+  invalid key.
 
 
-  Fixes a startup problem that could stop the app from loading or leave it
-  stuck without live updates when it couldn't reach a Bitcoin backend. The
-  app now always loads, keeps its real-time connection open, and clearly
-  shows a "can't reach the Bitcoin network" banner while a backend is
-  unreachable — reconnecting on its own once it's back.
+  Clearer navigation and settings: the notification bell, your personal
+  notification settings, and the admin notification page now have distinct
+  names instead of all being called "notifications"; the shortcut links on
+  the admin home page jump straight to the right settings section; some
+  technical wording was simplified (for example, "Node" is now "Health").
 
 
-  The solo mining page is now off by default until you turn it on under
-  Settings, including on installs upgrading from an earlier version.
+  The "can't reach the Bitcoin network" message is now consistent everywhere
+  it appears, with a calmer color for brief, recoverable connection hiccups.
+  Amounts you type now respect your chosen display unit instead of always
+  resetting to sats.
 
 
-  Full changelog: https://github.com/AlexM223/cairn/releases/tag/v0.2.36
+  Fixed transaction search sometimes showing "not found" for a transaction
+  ID when it was actually a temporary lookup error, and fixed notifications
+  not always opening the right page.
+
+
+  Also includes a mobile navigation fix for the mining page and dependency
+  hardening from v0.2.37.
+
+
+  Full changelog: https://github.com/AlexM223/cairn/releases/tag/v0.2.38 and
+  https://github.com/AlexM223/cairn/releases/tag/v0.2.37
 developer: Alex Martinez
 website: https://github.com/AlexM223/cairn
 dependencies: []
