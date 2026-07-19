@@ -2,7 +2,7 @@ manifestVersion: 1
 id: heartwood-bitcoin
 category: bitcoin
 name: Heartwood
-version: "0.2.40"
+version: "0.2.41"
 tagline: Your self-hosted Bitcoin command center
 description: >-
   Heartwood is a self-hosted Bitcoin command center: a block explorer,
@@ -26,41 +26,30 @@ description: >-
   RPC. Configure this under Settings → Chain Backend after logging in; no
   external services are contacted.
 releaseNotes: >-
-  Full regtest and testnet support: your wallets now follow whatever
-  network your instance is configured for everywhere, including building
-  and signing transactions, not just balances and history.
+  Fixed the receive-payment QR code's contrast so it reliably scans, and
+  fixed the notification bell being unreachable on small phone screens.
 
 
-  New wallets show accurate balances right away instead of needing a
-  refresh after creation. If one shared wallet has a misconfigured
-  connection, it no longer breaks monitoring for your other wallets, and
-  shows a plain-language "this wallet needs attention" message instead of
-  a confusing error. The block explorer now tells you honestly when a
-  transaction ID truly doesn't exist. Mining notifications can now
-  actually be delivered outside the app instead of only showing in-app,
-  and a few missing notification-settings rows were added. Amounts are
-  shown in your chosen unit consistently everywhere, and the minimum
-  "dust" spend amount is now applied consistently.
+  When speeding up a payment, you can now choose your own fee rate instead
+  of only the app's suggestion, and a payment that got replaced by a
+  faster one is now correctly labeled "Replaced" instead of showing as
+  "Failed". The "can't reach your node" banner now appears faster, and
+  more technical labels were simplified to plain language.
 
 
-  Also in this update: a wallet you were part-way through setting up, or
-  a payment you started but didn't finish sending, now shows up as a
-  pending draft on the wallet page with a clear "resume" notice; address
-  transaction history degrades gracefully instead of erroring out on
-  Electrum-only setups; the backup reminder eases off the longer you've
-  had the app set up; clearer first-deposit messaging; Send-flow fixes for
-  fiat-hidden/unit display preferences; and simplified technical wording
-  on admin pages.
+  Recent releases also brought: full regtest/testnet support (wallets
+  follow your instance's network everywhere, including building and
+  signing transactions); fresh balances on new wallets; one misconfigured
+  shared wallet no longer breaks monitoring for others; an honest explorer
+  not-found for unknown transactions; externally-deliverable mining
+  notifications; pending-draft/send-resume recovery; graceful address-
+  history degradation on Electrum-only setups; a decaying backup reminder;
+  clearer first-deposit messaging; paste-path multisig-config detection;
+  and consistent unit/fiat display and chain-status copy throughout.
 
 
-  And from recent releases: pasting a multisig wallet config now correctly
-  hands off to the multisig setup flow; clearer navigation labels (no more
-  three different things all called "notifications"; "Node" is now
-  "Health"); a consistent "can't reach the Bitcoin network" message with a
-  calmer color for brief hiccups; and a transaction-search fix.
-
-
-  Full changelog: https://github.com/AlexM223/cairn/releases/tag/v0.2.40,
+  Full changelog: https://github.com/AlexM223/cairn/releases/tag/v0.2.41,
+  https://github.com/AlexM223/cairn/releases/tag/v0.2.40,
   https://github.com/AlexM223/cairn/releases/tag/v0.2.39,
   https://github.com/AlexM223/cairn/releases/tag/v0.2.38, and
   https://github.com/AlexM223/cairn/releases/tag/v0.2.37
