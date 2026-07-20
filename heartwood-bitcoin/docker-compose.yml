@@ -7,7 +7,7 @@ services:
       APP_PORT: 3000
 
   web:
-    image: ghcr.io/alexm223/cairn:0.2.41@sha256:b62fb27345c210cd35e324f2045b6856e9eb46ff3f74b6f271bae15ef71bbbde
+    image: ghcr.io/alexm223/cairn:0.2.45@sha256:7294d4eedca4c50126f0600407c01e7737c1cd90237e456e3342f5f38d61a478
     restart: on-failure
     stop_grace_period: 1m
     init: true
@@ -25,6 +25,13 @@ services:
       # only accept traffic when the pool is enabled in-app.
       - "3333:3333"
       - "3334:3334"
+      # Native Stratum V2 listener (cairn-qfez8 wave 1, shipped v0.2.45).
+      # Noise-encrypted miner connections on the same shared solo-pool
+      # engine as 3333/3334 above. Flag-gated OFF by default
+      # (mining_sv2_enabled), so this port accepts no traffic until an
+      # admin turns it on under Settings — publishing it now avoids a
+      # second store update just to expose it later (cairn-qfez8.23).
+      - "3335:3335"
     volumes:
       - ${APP_DATA_DIR}/data:/data
     environment:

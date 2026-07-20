@@ -2,7 +2,7 @@ manifestVersion: 1
 id: heartwood-bitcoin
 category: bitcoin
 name: Heartwood
-version: "0.2.41"
+version: "0.2.45"
 tagline: Your self-hosted Bitcoin command center
 description: >-
   Heartwood is a self-hosted Bitcoin command center: a block explorer,
@@ -26,33 +26,42 @@ description: >-
   RPC. Configure this under Settings → Chain Backend after logging in; no
   external services are contacted.
 releaseNotes: >-
-  Fixed the receive-payment QR code's contrast so it reliably scans, and
-  fixed the notification bell being unreachable on small phone screens.
+  Solo mining can now speak Stratum V2: an optional, encrypted connection
+  mode for compatible ASIC firmware on port 3335. It's off by default —
+  turn it on under Settings → Mining if your miner supports it. Regular
+  mining (ports 3333 and 3334) keeps working exactly as before. Also
+  fixed: the solo-mining ports are now actually reachable from other
+  devices on your network — previously the connection card showed an
+  address that could never connect.
 
 
-  When speeding up a payment, you can now choose your own fee rate instead
-  of only the app's suggestion, and a payment that got replaced by a
-  faster one is now correctly labeled "Replaced" instead of showing as
-  "Failed". The "can't reach your node" banner now appears faster, and
-  more technical labels were simplified to plain language.
+  A single, unified path now handles sending money for both regular and
+  multisig wallets, closing two subtle gaps that only affected multisig
+  in rare edge cases. The block explorer gained public pool stats and a
+  leaderboard, plus a small celebration when your miner finds a block,
+  and ASIC miners get their own high-difficulty port.
 
 
-  Recent releases also brought: full regtest/testnet support (wallets
-  follow your instance's network everywhere, including building and
-  signing transactions); fresh balances on new wallets; one misconfigured
-  shared wallet no longer breaks monitoring for others; an honest explorer
-  not-found for unknown transactions; externally-deliverable mining
-  notifications; pending-draft/send-resume recovery; graceful address-
-  history degradation on Electrum-only setups; a decaying backup reminder;
-  clearer first-deposit messaging; paste-path multisig-config detection;
-  and consistent unit/fiat display and chain-status copy throughout.
+  Other recent improvements: safer invite links for bringing family or
+  crew aboard, with a preview that never leaks private wallet data before
+  they accept; a redesigned send flow that shows the fee up front; a new
+  Health page; simplified navigation (8 sections down to 3); and hardened
+  handling of a rare notification/chain-reorg edge case and a coinbase-
+  maturity bug.
 
 
-  Full changelog: https://github.com/AlexM223/cairn/releases/tag/v0.2.41,
-  https://github.com/AlexM223/cairn/releases/tag/v0.2.40,
-  https://github.com/AlexM223/cairn/releases/tag/v0.2.39,
-  https://github.com/AlexM223/cairn/releases/tag/v0.2.38, and
-  https://github.com/AlexM223/cairn/releases/tag/v0.2.37
+  Earlier releases also brought: fixed receive-QR contrast and a
+  reachable notification bell on small phones; custom fee rates when
+  speeding up a payment; correct "Replaced" labeling for bumped payments;
+  full regtest/testnet support; and consistent unit/fiat display
+  throughout.
+
+
+  Full changelog: https://github.com/AlexM223/cairn/releases/tag/v0.2.45,
+  https://github.com/AlexM223/cairn/releases/tag/v0.2.44,
+  https://github.com/AlexM223/cairn/releases/tag/v0.2.43,
+  https://github.com/AlexM223/cairn/releases/tag/v0.2.42, and
+  https://github.com/AlexM223/cairn/releases/tag/v0.2.41
 developer: Alex Martinez
 website: https://github.com/AlexM223/cairn
 dependencies: []
