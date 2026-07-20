@@ -7,7 +7,7 @@ services:
       APP_PORT: 3000
 
   web:
-    image: ghcr.io/alexm223/cairn:0.2.46@sha256:bfdc87eb907aba40ec16d1afb0fbaa5f8741df53a7cc01f8c85cba21d4f974c6
+    image: ghcr.io/alexm223/cairn:0.2.47@sha256:a8e8fc6715857bc1ff2e9483461509cc18ef42c2068481c79a9cb3f496ce7eab
     restart: on-failure
     stop_grace_period: 1m
     init: true
@@ -44,6 +44,19 @@ services:
       # public electrum.blockstream.info default even when local electrs is
       # installed (see cairn-x26e). Never set on non-Umbrel deployments.
       CAIRN_PLATFORM: umbrel
+      # Zero-config Bitcoin Core RPC (cairn-2ldr reversal, v0.2.47). These
+      # interpolate from the `bitcoin` app's exports.sh, which umbrelOS only
+      # sources because of the `dependencies: [bitcoin]` declaration above —
+      # if that app isn't installed, all four resolve to empty strings and
+      # the app's own guards in chainEnvSeed.ts ignore them (no crash, no
+      # change from today's manual-connect behavior). APP_BITCOIN_NETWORK
+      # values outside Cairn's vocabulary (e.g. testnet4, signet) are passed
+      # through as-is; the app ignores values it doesn't recognize and
+      # relies on its live getblockchaininfo check instead.
+      CAIRN_CORE_RPC_URL: http://${APP_BITCOIN_NODE_IP}:${APP_BITCOIN_RPC_PORT}
+      CAIRN_CORE_RPC_USER: ${APP_BITCOIN_RPC_USER}
+      CAIRN_CORE_RPC_PASS: ${APP_BITCOIN_RPC_PASS}
+      CAIRN_CORE_RPC_NETWORK: ${APP_BITCOIN_NETWORK}
       # First-run admin bootstrap; forces a credential reset on first login
       CAIRN_ADMIN_PASSWORD: ${APP_PASSWORD}
       # Keeps the session cookie non-Secure over plain-HTTP Umbrel and sets the
