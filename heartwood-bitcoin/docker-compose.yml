@@ -7,7 +7,7 @@ services:
       APP_PORT: 3000
 
   web:
-    image: ghcr.io/alexm223/cairn:0.2.36@sha256:6e5e1af091cd8ac4480c0e7d92cf21ed29d4a9df6812f1afd4b3bcfeb57db93b
+    image: ghcr.io/alexm223/cairn:0.2.46@sha256:bfdc87eb907aba40ec16d1afb0fbaa5f8741df53a7cc01f8c85cba21d4f974c6
     restart: on-failure
     stop_grace_period: 1m
     init: true
@@ -16,6 +16,24 @@ services:
       # Raw host port for hardware-wallet signing (needs an HTTPS secure context
       # that app_proxy's plain HTTP cannot provide). host 5588 -> container 3443.
       - "5588:3443"
+      # Solo-mining stratum listeners (cairn-kgj7a). The in-app pool binds
+      # 0.0.0.0 inside the container under CAIRN_PLATFORM=umbrel (cairn-bm7c2),
+      # but without these host mappings no LAN miner can ever reach an Umbrel
+      # install — the connection card's stratum+tcp:// address was a dead end.
+      # 3333 = standard/small miners; 3334 = high-difficulty-floor ASIC port
+      # (cairn-pz8v5). Mining is feature-flagged off by default; the listeners
+      # only accept traffic when the pool is enabled in-app.
+      - "3333:3333"
+      - "3334:3334"
+      # Native Stratum V2 listener (cairn-qfez8 wave 1, shipped v0.2.45;
+      # per-channel vardiff + optional BIP320 version rolling added
+      # v0.2.46, cairn-qfez8.28/29). Noise-encrypted miner connections on
+      # the same shared solo-pool engine as 3333/3334 above. Flag-gated
+      # OFF by default (mining_sv2_enabled), so this port accepts no
+      # traffic until an admin turns it on under Settings — publishing it
+      # now avoids a second store update just to expose it later
+      # (cairn-qfez8.23).
+      - "3335:3335"
     volumes:
       - ${APP_DATA_DIR}/data:/data
     environment:
