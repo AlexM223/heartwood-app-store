@@ -2,7 +2,7 @@ manifestVersion: 1
 id: heartwood-bitcoin
 category: bitcoin
 name: Heartwood
-version: "0.2.47"
+version: "0.2.48"
 tagline: Your self-hosted Bitcoin command center
 description: >-
   Heartwood is a self-hosted Bitcoin command center: a block explorer,
@@ -26,6 +26,16 @@ description: >-
   RPC. Configure this under Settings → Chain Backend after logging in; no
   external services are contacted.
 releaseNotes: >-
+  Navigation is simplified: four sections (Home, Wallets, Mining, Explorer —
+  Mining and Explorer only show up if you've turned them on), one Settings
+  page instead of several, and no more developer jargon. Technical terms
+  are still there if you want them, just a tap away instead of front and
+  center. The admin area is renamed Health and simplified too. If you had
+  the old feature-flags page bookmarked, it now redirects to the new
+  settings. Explorer is on by default for new installs, and first-time
+  admins get a setup card walking through initial configuration.
+
+
   Mining now connects to your Umbrel's Bitcoin Node automatically — no RPC
   setup. Install the Bitcoin Node app if you don't have it; if you installed
   it after Heartwood, restart Heartwood once to pick up the connection. The
@@ -45,16 +55,15 @@ releaseNotes: >-
   both regular and multisig wallets; public pool stats and a leaderboard
   on the block explorer with a celebration when your miner finds a block;
   safer invite links for bringing family or crew aboard; a redesigned send
-  flow that shows the fee up front; a new Health page; simplified
-  navigation; fixed receive-QR contrast and notification bell on small
-  phones; and full regtest/testnet support.
+  flow that shows the fee up front; fixed receive-QR contrast and
+  notification bell on small phones; and full regtest/testnet support.
 
 
-  Full changelog: https://github.com/AlexM223/cairn/releases/tag/v0.2.47,
+  Full changelog: https://github.com/AlexM223/cairn/releases/tag/v0.2.48,
+  https://github.com/AlexM223/cairn/releases/tag/v0.2.47,
   https://github.com/AlexM223/cairn/releases/tag/v0.2.46,
-  https://github.com/AlexM223/cairn/releases/tag/v0.2.45,
-  https://github.com/AlexM223/cairn/releases/tag/v0.2.44, and
-  https://github.com/AlexM223/cairn/releases/tag/v0.2.43
+  https://github.com/AlexM223/cairn/releases/tag/v0.2.45, and
+  https://github.com/AlexM223/cairn/releases/tag/v0.2.44
 developer: Alex Martinez
 website: https://github.com/AlexM223/cairn
 dependencies:
